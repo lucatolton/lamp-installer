@@ -10,4 +10,5 @@ You need to type one single command to use the script:
 bash <(curl -S https://raw.githubusercontent.com/lucatolton/lamp-installer/main/install.sh)
 ```
 That's not too hard, is it?
+
 _NOTE: This script requires curl and git to be installed.
