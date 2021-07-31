@@ -11,4 +11,4 @@ bash <(curl -S https://raw.githubusercontent.com/lucatolton/lamp-installer/main/
 ```
 That's not too hard, is it?
 
-_NOTE: This script requires curl and git to be installed.
+_NOTE: This script requires curl and git to be installed._
