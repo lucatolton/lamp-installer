@@ -21,6 +21,8 @@
 #                                                                           #
 #############################################################################
 
+ip="$(ifconfig | grep -A 1 'eth0' | tail -1 | cut -d ':' -f 2 | cut -d ' ' -f 1)"
+
 echo ""
 echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 echo "!! IT IS RECOMMENDED TO RUN THIS SCRIPT AS ROOT !!"
@@ -39,14 +41,30 @@ if [[ $option == "secure" ]]; then
   echo ""
   echo "* Configuring firewall for SECURE setup"
   sudo ufw allow in "Apache Secure"
+  sudo ufw enable
 elif [[ $option == "insecure" ]]; then
   echo ""
   echo "* Configuring firewall for INSECURE setup"
   sudo ufw allow in "Apache"
+  sudo ufw enable
 elif [[ $option == "both" ]]; then
   echo ""
   echo "* Configuring firewall for SECURE and INSECURE setups"
   sudo ufw allow in "Apache Full"
+  sudo ufw enable
 else
   echo "* Skipping firewall configuration"
 fi
+
+echo ""
+echo "##########################################"
+echo "# Installation finished!                 #"
+echo "#                                        #"
+echo "# Apache: http://$ip                     #"
+echo "# MySQL: $ip:3306                        #"
+echo "#                                        #"
+echo "# For easier management of MySQL,        #"
+echo "# you may want to install PHPMyAdmin.    #"
+echo "# Simply run this script again to do so! #"
+echo "#                                        #"
+echo "##########################################"
