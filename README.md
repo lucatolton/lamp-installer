@@ -5,4 +5,9 @@
 An easy to use script to install a LAMP stack.
 
 ## How do I use it?
-Simply type 
+You need to type one single command to use the script:
+```bash
+bash <(curl -S https://raw.githubusercontent.com/lucatolton/lamp-installer/main/install.sh)
+```
+That's not too hard, is it?
+NOTE: This script requires curl and git to be installed.
